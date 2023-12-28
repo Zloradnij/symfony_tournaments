@@ -1,0 +1,18 @@
+body {
+    background-color: skyblue;
+}
+.text-right {
+    text-align: right;
+}
+.game-day .row:nth-child(even) {
+    background: #CCC;
+}
+.game-day .row:nth-child(odd) {
+    background: #EEE;
+}
+.date-field {
+    color: #ff413c;
+}
+.game-day-block {
+    padding-bottom: 30px;
+}

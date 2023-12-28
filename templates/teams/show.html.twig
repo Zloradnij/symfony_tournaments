@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Team{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h2 class="text-center mt-5 mb-3">Show Team</h2>
+        <div class="card">
+            <div class="card-header">
+                <a class="btn btn-outline-info float-right" href="{{ path('app_teams_index') }}">
+                    View All Teams
+                </a>
+            </div>
+            <div class="card-body">
+                <b class="text-muted">Title:</b>
+                <p>{{ team.title }}</p>
+                <b class="text-muted">Date Created:</b>
+                <p>{{ team.createdAt ? team.createdAt|date('Y-m-d') : '' }}</p>
+                <b class="text-muted">Date Updated:</b>
+                <p>{{ team.updatedAt ? team.updatedAt|date('Y-m-d') : '' }}</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
