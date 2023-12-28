@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tournaments{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h2 class="text-center mt-5 mb-3">Show Tournament</h2>
+        <div class="card">
+            <div class="card-header">
+                <a class="btn btn-outline-info float-right" href="{{ path('app_tournaments_index') }}">
+                    View All Tournaments
+                </a>
+            </div>
+            <div class="card-body">
+                <h2 class="text-center mt-5 mb-3">{{ tournament.title }}</h2>
+
+                <div class="row">
+                    {% for date, gameDay in games %}
+                        <div class="game-day-block row">
+                            <div class="date-field text-center">
+                                {{ date }}
+                            </div>
+                            <div class="game-day">
+                                {% for game in gameDay %}
+                                    <div class="row">
+                                        <div class="text-right col-6">
+                                            {{ game.firstTeam.title }}
+                                        </div>
+                                        <div class="text-left col-6">
+                                            {{ game.secondTeam.title }}
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

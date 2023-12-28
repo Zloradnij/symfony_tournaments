@@ -1,0 +1,13 @@
+{{ form_start(form) }}
+    <div class="form-group">
+        {{ form_row(form.title, {'attr': {'class': 'form-control'}}) }}
+    </div>
+    <div class="form-group">
+        {% for team in form.teams %}
+            <div class="form-group">
+                {{ form_row(team) }}
+            </div>
+        {% endfor %}
+    </div>
+    <button class="btn {{ button_color|default('btn-outline-primary') }}  mt-3">{{ button_label|default('Save Tournament') }}</button>
+{{ form_end(form) }}
