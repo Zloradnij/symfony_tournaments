@@ -6,9 +6,10 @@ cd symfony_tournaments
 
 docker-compose build \
 docker-compose up -d \
-docker exec -it tournaments-php
+docker exec -it tournaments-php bash
 
 cd /tournaments \
+composer install \
 php bin/console make:migration \
 php bin/console doctrine:migrations:migrate \
 php bin/console asset-map:compile
