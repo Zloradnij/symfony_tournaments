@@ -11,6 +11,8 @@ use Doctrine\Persistence\ObjectManager;
 
 class SchedulerRandom
 {
+    public const MAX_MATCH_COUNT = 4;
+
     private ObjectManager $entityManager;
 
     public function create(Tournaments $tournament, ObjectManager $entityManager): void
@@ -28,7 +30,7 @@ class SchedulerRandom
             $date = (new \DateTime())->modify("+{$i} days")->format('Y-m-d');
             $games[$date] = [];
 
-            for ($j = 1; $j <= TournamentsEntityListener::MAX_MATCH_COUNT; $j++) {
+            for ($j = 1; $j <= static::MAX_MATCH_COUNT; $j++) {
                 if (empty($gamesLine)) {
                     continue;
                 }

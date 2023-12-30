@@ -34,7 +34,7 @@ services:
       - db
 
   db:
-    container_name: ${APP_NAME}-db
+    container_name: ${PROJECT_NAME}-db
     image: postgres:15
     restart: unless-stopped
     volumes:
